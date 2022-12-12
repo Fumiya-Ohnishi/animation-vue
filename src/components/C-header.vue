@@ -15,6 +15,7 @@
               <router-link to="list">List</router-link>
               <router-link to="scroll">Scroll</router-link>
               <router-link to="scrollView">ScrollView</router-link>
+              <router-link to="scrollAnime">scrollAnime</router-link>
             </div>
           </div>
         </transition>

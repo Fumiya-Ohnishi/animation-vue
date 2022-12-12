@@ -162,30 +162,30 @@ export default {
   setup() {
     const imgFeadIn = () => {
       gsap.registerPlugin(ScrollTrigger)
-      const jsFadeUps = document.querySelectorAll(".js-fadeup")
+      const jsFadeUp = document.getElementsByClassName("js-fadeup")
 
-      jsFadeUps.forEach((jsFadeUp, index) => {
-        gsap.to(jsFadeUp, {
+      for (let i = 0; i < jsFadeUp.length; i++) {
+        gsap.to(jsFadeUp[i], {
           scrollTrigger: {
-            trigger: jsFadeUp,
-            start: "top-=200 bottom",
+            trigger: jsFadeUp[i],
+            start: "center center",
             end: "bottom top",
             scrub: true,
+            // markers: true
           },
         })
 
         ScrollTrigger.create({
-          trigger: jsFadeUp,
-          start: "top-=200 bottom",
+          trigger: jsFadeUp[i],
+          start: "centar bottom",
           end: "bottom top",
-          id: index + 1,
           once: true,
           toggleClass: {
-            targets: jsFadeUp,
+            targets: jsFadeUp[i],
             className: "js-after",
           },
         })
-      })
+      }
     }
     const imgFeadIn2 = () => {
       const gridItems = document.querySelectorAll(".grid__img__item")
